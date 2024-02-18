@@ -29,7 +29,7 @@ resource "aws_instance" "nmd221" {
   }
 }
 
-resource "aws_security_group" "default" {
+resource "aws_security_group" "nmd221" {
   ingress{
     description = "Allow SSH"
     from_port = 22
