@@ -15,15 +15,15 @@ resource "aws_instance" "nmd221" {
     volume_size = 15
     volume_type = "standard"
   }
-  //user_data = file("install.sh")
+  user_data = file("install.sh")
   //user_data = file("${path.module}/install.sh")
-  user_data = <<-EOF
-              #!/bin/bash
-              sudo apt-get update -y
-              sudo apt-get install apache2 -y
-              sudo systemctl start apache2
-              sudo systemctl enable apache2
-              EOF
+  //user_data = <<-EOF
+  //           #!/bin/bash
+  //          sudo apt-get update -y
+  //           sudo apt-get install apache2 -y
+  //           sudo systemctl start apache2
+  //          sudo systemctl enable apache2
+  //           EOF
   tags = {
     Name = "EC2-instance"
   }
