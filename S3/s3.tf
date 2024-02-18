@@ -23,7 +23,7 @@ resource "aws_s3_bucket_object" "example_object_folder" {
 resource "aws_s3_bucket_object" "example_object_image" {
   bucket = aws_s3_bucket.my_bucket.id
   key    = "myfolder-test/devops.jpg"
-  source = "https://github.com/Cyber1993/TERRAFORM_JENKINS/blob/main/install.sh"
+  source = "https://github.com/Cyber1993/TERRAFORM_JENKINS/blob/main/S3/devops.jpg"
   tags = {
     Name = "devops.jpg Image"
   }
