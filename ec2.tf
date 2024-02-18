@@ -1,13 +1,13 @@
 provider "aws" {
-  region = "eu-north-1"
+  region = "eu-central-1"
   access_key = var.aws_access_key
   secret_key = var.aws_secret_key
 }
 
 resource "aws_instance" "nmd221" {
-  availability_zone = "eu-north-1a"
-  ami = "ami-0014ce3e52359afbd"
-  instance_type = "t3.micro"
+  availability_zone = "eu-central-1a"
+  ami = "ami-0faab6bdbac9486fb"
+  instance_type = "t2.micro"
   key_name = "221"
   vpc_security_group_ids = [aws_security_group.nmd221.id]
   ebs_block_device {
@@ -30,7 +30,7 @@ resource "aws_instance" "nmd221" {
 }
 
 resource "aws_security_group" "nmd221" {
-  name        = "DefaultTerraformSG"
+  name        = "nmd221"
   description = "Allow 22, 80 inbound taffic"
 
   ingress {
