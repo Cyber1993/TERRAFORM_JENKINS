@@ -30,24 +30,29 @@ resource "aws_instance" "nmd221" {
 }
 
 resource "aws_security_group" "nmd221" {
-  ingress{
-    description = "Allow SSH"
-    from_port = 22
-    to_port = 22
-    protocol = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-  ingress{
+  name        = "DefaultTerraformSG"
+  description = "Allow 22, 80 inbound taffic"
+
+  ingress {
     description = "Allow HTTP"
-    from_port = 80
-    to_port = 80
-    protocol = "tcp"
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
-  egress{
-    from_port = 0
-    to_port = 0
-    protocol = "-1"
+
+  ingress {
+    description = "Allow SSH"
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
