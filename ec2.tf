@@ -24,6 +24,7 @@ resource "aws_instance" "nmd221" {
   //           sudo systemctl start apache2
   //          sudo systemctl enable apache2
   //           EOF
+  
   tags = {
     Name = "EC2-instance"
   }
