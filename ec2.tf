@@ -8,7 +8,7 @@ resource "aws_instance" "nmd221" {
   availability_zone = "eu-central-1a"
   ami = "ami-0faab6bdbac9486fb"
   instance_type = "t2.micro"
-  key_name = "221"
+  key_name = "221Frankfurt"
   vpc_security_group_ids = [aws_security_group.nmd221.id]
   ebs_block_device {
     device_name = "/dev/sda1"
