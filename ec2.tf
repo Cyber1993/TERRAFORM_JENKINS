@@ -9,7 +9,7 @@ resource "aws_instance" "nmd221" {
   ami = "ami-0014ce3e52359afbd"
   instance_type = "t3.micro"
   key_name = "221"
-  vpc_security_group_ids = [aws_security_group.default.id]
+  vpc_security_group_ids = [aws_security_group.nmd221.id]
   ebs_block_device {
     device_name = "/dev/sda1"
     volume_size = 15
