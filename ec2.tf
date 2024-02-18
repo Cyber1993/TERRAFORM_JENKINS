@@ -15,7 +15,8 @@ resource "aws_instance" "nmd221" {
     volume_size = 15
     volume_type = "standard"
   }
-  user_data = file("install.sh")
+  //user_data = file("install.sh")
+  user_data = file("${path.module}/install.sh")
   tags = {
     Name = "EC2-instance"
   }
